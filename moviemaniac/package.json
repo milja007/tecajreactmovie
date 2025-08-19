@@ -11,10 +11,13 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "lodash": "^4.17.21",
     "react": "^19.1.1",
-    "react-dom": "^19.1.1"
+    "react-dom": "^19.1.1",
+    "vite-plugin-svgr": "^4.3.0"
   },
   "devDependencies": {
+    "@types/lodash": "^4.17.20",
     "@types/react": "^19.1.10",
     "@types/react-dom": "^19.1.7",
     "@vitejs/plugin-react": "^5.0.0",

@@ -4,25 +4,26 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 30px;
-  background-color: #1a1a1a;
+  background-color: var(--body_background);
   border-bottom: 1px solid #e6e6e6;
 }
 
 .navbar-links {
   display: flex;
   align-items: center;
+  gap: 20px;
 }
 
 .navbar > h1 {
   font-size: 30px;
-  color: #ffe400;
+  color: var(--heading_color);
 }
 
 .navbar-links > a {
   display: flex;
   align-items: center;
   gap: 10px;
-  color: #fff;
+  color: var(--body_color);
   text-decoration: none;
 }
 

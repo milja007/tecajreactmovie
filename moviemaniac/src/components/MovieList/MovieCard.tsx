@@ -10,9 +10,10 @@ interface MovieCardProps {
     release_date: string;
     overview: string;
   };
+  formatRating: (rating: number) => number;
 }
 
-const MovieCard: React.FC<MovieCardProps> = ({ movie }) => {
+const MovieCard: React.FC<MovieCardProps> = ({ movie, formatRating }) => {
   const { poster_path, title, release_date, vote_average, overview } = movie;
   return (
     <div className="movie_card">
@@ -31,7 +32,7 @@ const MovieCard: React.FC<MovieCardProps> = ({ movie }) => {
           <div className="align_center movie_date_rate   ">
             <p>{release_date}</p>
             <p>
-              {vote_average}{" "}
+              {formatRating(vote_average)}{" "}
               <img src={Star} alt="rating icon" className="card_emoji" />
             </p>
           </div>
