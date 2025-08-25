@@ -3,22 +3,22 @@ import DarkMode from "../DarkMode/DarkMode";
 import fire from "../../assets/fire.png";
 import star from "../../assets/glowing-star.png";
 import party from "../../assets/partying-face.png";
-
+import { NavLink } from "react-router-dom";
 const Navbar = () => {
   return (
     <nav className="navbar">
       <h1>Moviemaniac</h1>
-      <div className="navbar-links">
+      <div className="navbar-Navs">
         <DarkMode />
-        <a className="fire" href="#popular">
+        <NavLink className="fire" to="/">
           Popular <img className="icon" src={fire} alt="fire" />
-        </a>
-        <a className="star" href="#top_rated">
+        </NavLink>
+        <NavLink className="star" to="/top-rated">
           Top Rated <img className="icon" src={star} alt="star" />
-        </a>
-        <a className="party" href="#upcoming">
+        </NavLink>
+        <NavLink className="party" to="/upcoming">
           Upcomming <img className="icon" src={party} alt="party" />
-        </a>
+        </NavLink>
       </div>
     </nav>
   );

@@ -1,6 +1,5 @@
 .navbar {
   display: flex;
-
   align-items: center;
   justify-content: space-between;
   padding: 0 30px;
@@ -8,23 +7,37 @@
   border-bottom: 1px solid #e6e6e6;
 }
 
-.navbar-links {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
 .navbar > h1 {
   font-size: 30px;
   color: var(--heading_color);
 }
 
-.navbar-links > a {
+.navbar-Navs {
   display: flex;
   align-items: center;
+  gap: 20px;
+}
+
+/* Stilovi za NavLink komponente */
+.navbar-Navs > a {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
   gap: 10px;
   color: var(--body_color);
   text-decoration: none;
+  padding: 0 15px;
+  transition: all 0.3s ease;
+}
+
+/* Hover efekt */
+.navbar-Navs > a:hover {
+  color: var(--heading_color);
+}
+
+/* Active stanje - NavLink automatski dodaje 'active' klasu */
+.navbar-Navs > a.active {
+  font-weight: 800;
 }
 
 .icon {

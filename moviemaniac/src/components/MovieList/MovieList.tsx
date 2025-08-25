@@ -35,7 +35,7 @@ const MovieList: React.FC<{ type: string; title: string; emoji: string }> = ({
 
   useEffect(() => {
     fetchMovies();
-  }, []);
+  }, [type]);
 
   const fetchMovies = async () => {
     const response = await fetch(
@@ -74,7 +74,7 @@ const MovieList: React.FC<{ type: string; title: string; emoji: string }> = ({
     if (sort.by !== "default") {
       // Sortiraj filmove prema odabranom kriteriju
       const sortedMovies = _.orderBy(
-        filteredMovies,
+        movies.filter((movie) => movie.vote_average >= minRating),
         [sort.by],
         [sort.order as "asc" | "desc"]
       );
@@ -90,7 +90,7 @@ const MovieList: React.FC<{ type: string; title: string; emoji: string }> = ({
         setFilteredMovies(movies);
       }
     }
-  }, [sort, filteredMovies, movies, minRating]);
+  }, [sort, movies, minRating]);
 
   return (
     <section className="movie_list" id={type}>

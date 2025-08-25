@@ -1,5 +1,6 @@
 import "./MovieCard.css";
 import Star from "../../assets/Star.png";
+import { Link } from "react-router-dom";
 
 interface MovieCardProps {
   movie: {
@@ -17,11 +18,7 @@ const MovieCard: React.FC<MovieCardProps> = ({ movie, formatRating }) => {
   const { poster_path, title, release_date, vote_average, overview } = movie;
   return (
     <div className="movie_card">
-      <a
-        href={`https://www.themoviedb.org/movie/${movie.id}`}
-        target="_blank"
-        className="movie_card_image"
-      >
+      <Link to={`/movie/${movie.id}`} className="movie_card_image">
         <img
           src={`https://image.tmdb.org/t/p/w500${poster_path}`}
           alt="Movie Poster"
@@ -40,7 +37,7 @@ const MovieCard: React.FC<MovieCardProps> = ({ movie, formatRating }) => {
             {overview?.slice(0, 100) + "..." || "No description available"}
           </p>
         </div>
-      </a>
+      </Link>
     </div>
   );
 };
